@@ -7,7 +7,7 @@
 #include "controle_servico.h"
 #include "utilitario.h"
 #include "arquivo.h"
-//#include "valor_conta.h" não sera utilizado até o momento
+//#include "valor_conta.h" nï¿½o sera utilizado atï¿½ o momento
 
 using namespace std;
 	utilitario uti;
@@ -28,6 +28,7 @@ void menu() {
 	
 	
 
+	//teste commit via aws webservices
 	system("cls");
 	cout << " \n\t BEM VINDO AO HOTEL NIGGA DELUXE \n\n ";
 	cout << "1) Fazer reserva de quarto " << endl;
@@ -76,11 +77,11 @@ int main(int argc, char *argv[])
 				cin >> diarias;
 				p.setnome(nome);
 				p.setdiarias(diarias);
-				aux = uti.gera_quarto(mapPessoa, itP); //O VALOR RETORNADO PELA FUNÇÃO SERA O NUMERO DO QUARTO
+				aux = uti.gera_quarto(mapPessoa, itP); //O VALOR RETORNADO PELA FUNï¿½ï¿½O SERA O NUMERO DO QUARTO
 				mapPessoa[aux] = pessoa(nome, diarias);
 				
 				diarias = valor_diaria * diarias ;
-				mapConta.insert(make_pair(aux, diarias)); //O MAPCONTA DEVERA SEMPRE USAR O MAKE_PAIR NA PRIMEIRA INICIALIZAÇÃO
+				mapConta.insert(make_pair(aux, diarias)); //O MAPCONTA DEVERA SEMPRE USAR O MAKE_PAIR NA PRIMEIRA INICIALIZAï¿½ï¿½O
 				
 				
 				break;
@@ -138,29 +139,29 @@ int main(int argc, char *argv[])
 						double teste;//VARIAVEL DE TESTE
 						if(uti.verifica_quarto(quarto, mapPessoa, itP)){ //VERIFICA SE O QUARTO EXISTE
 							cout<<" Reserva encontrada, aguarde"<<endl;
-								for(itS = mapServico.begin(); itS != mapServico.end(); itS++){ // LISTA OS SERVIÇOS
+								for(itS = mapServico.begin(); itS != mapServico.end(); itS++){ // LISTA OS SERVIï¿½OS
 									cout<< itS->first ;
 									itS->second.imprimir() ;
 								}
-							cout <<" escolha o serviço"<<endl ;
+							cout <<" escolha o serviï¿½o"<<endl ;
 							cin	 >> servico ;
 							itS = mapServico.find(servico) ;
 							
 							itC = mapConta.find(quarto) ; 
-							teste =itC->second + itS->second.getvalor() ;//SOMA O VALOR DO SERVIÇO PRA SER ADICIONADO NA CONTA
+							teste =itC->second + itS->second.getvalor() ;//SOMA O VALOR DO SERVIï¿½O PRA SER ADICIONADO NA CONTA
 							//teste =uti.calcula_valor(quarto,itS->second, mapConta, itC);
 							
 							
 							mapConta[quarto] =  teste; 
 						}
 						else{
-							cout<<" Sua reserva não existe"<<endl;
+							cout<<" Sua reserva nï¿½o existe"<<endl;
 						}
 				break;
 				
 					
-				case 6: cout<<" serviços disponiveis"<< endl;
-						for(itS = mapServico.begin(); itS != mapServico.end(); itS++){ // LISTA OS SERVIÇOS
+				case 6: cout<<" serviï¿½os disponiveis"<< endl;
+						for(itS = mapServico.begin(); itS != mapServico.end(); itS++){ // LISTA OS SERVIï¿½OS
 									cout<< itS->first ;
 									itS->second.imprimir() ;
 								}
@@ -173,7 +174,7 @@ int main(int argc, char *argv[])
 							cout<< itC->second ;
 						}
 						else
-							cout<<" voce não tem reservas"<<endl;
+							cout<<" voce nï¿½o tem reservas"<<endl;
 				break;
 				
 				case 8:	gravar_arquivo(mapPessoa, itP);
@@ -209,7 +210,7 @@ int main(int argc, char *argv[])
 #include "controle_servico.h"
 #include "utilitario.h"
 #include "arquivo.h"
-//#include "valor_conta.h" não sera utilizado até o momento
+//#include "valor_conta.h" nï¿½o sera utilizado atï¿½ o momento
 
 using namespace std;
 	utilitario uti;
@@ -278,11 +279,11 @@ int main(int argc, char *argv[])
 				cin >> diarias;
 				p.setnome(nome);
 				p.setdiarias(diarias);
-				aux = uti.gera_quarto(mapPessoa, itP); //O VALOR RETORNADO PELA FUNÇÃO SERA O NUMERO DO QUARTO
+				aux = uti.gera_quarto(mapPessoa, itP); //O VALOR RETORNADO PELA FUNï¿½ï¿½O SERA O NUMERO DO QUARTO
 				mapPessoa[aux] = pessoa(nome, diarias);
 				
 				diarias = valor_diaria * diarias ;
-				mapConta.insert(make_pair(aux, diarias)); //O MAPCONTA DEVERA SEMPRE USAR O MAKE_PAIR NA PRIMEIRA INICIALIZAÇÃO
+				mapConta.insert(make_pair(aux, diarias)); //O MAPCONTA DEVERA SEMPRE USAR O MAKE_PAIR NA PRIMEIRA INICIALIZAï¿½ï¿½O
 				
 				
 				break;
@@ -340,29 +341,29 @@ int main(int argc, char *argv[])
 						double teste;//VARIAVEL DE TESTE
 						if(uti.verifica_quarto(quarto, mapPessoa, itP)){ //VERIFICA SE O QUARTO EXISTE
 							cout<<" Reserva encontrada, aguarde"<<endl;
-								for(itS = mapServico.begin(); itS != mapServico.end(); itS++){ // LISTA OS SERVIÇOS
+								for(itS = mapServico.begin(); itS != mapServico.end(); itS++){ // LISTA OS SERVIï¿½OS
 									cout<< itS->first ;
 									itS->second.imprimir() ;
 								}
-							cout <<" escolha o serviço"<<endl ;
+							cout <<" escolha o serviï¿½o"<<endl ;
 							cin	 >> servico ;
 							itS = mapServico.find(servico) ;
 							
 							itC = mapConta.find(quarto) ; 
-							teste =itC->second + itS->second.getvalor() ;//SOMA O VALOR DO SERVIÇO PRA SER ADICIONADO NA CONTA
+							teste =itC->second + itS->second.getvalor() ;//SOMA O VALOR DO SERVIï¿½O PRA SER ADICIONADO NA CONTA
 							//teste =uti.calcula_valor(quarto,itS->second, mapConta, itC);
 							
 							
 							mapConta[quarto] =  teste; 
 						}
 						else{
-							cout<<" Sua reserva não existe"<<endl;
+							cout<<" Sua reserva nï¿½o existe"<<endl;
 						}
 				break;
 				
 					
-				case 6: cout<<" serviços disponiveis"<< endl;
-						for(itS = mapServico.begin(); itS != mapServico.end(); itS++){ // LISTA OS SERVIÇOS
+				case 6: cout<<" serviï¿½os disponiveis"<< endl;
+						for(itS = mapServico.begin(); itS != mapServico.end(); itS++){ // LISTA OS SERVIï¿½OS
 									cout<< itS->first ;
 									itS->second.imprimir() ;
 								}
@@ -375,7 +376,7 @@ int main(int argc, char *argv[])
 							cout<< itC->second ;
 						}
 						else
-							cout<<" voce não tem reservas"<<endl;
+							cout<<" voce nï¿½o tem reservas"<<endl;
 				break;
 				
 				case 8:	gravar_arquivo(mapPessoa, itP);
